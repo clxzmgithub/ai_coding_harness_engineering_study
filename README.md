@@ -14,8 +14,8 @@
 
 本项目是一个面向 **AI 工程提效** 的系统性学习仓库，**不是真实的生产项目**。聚焦于 AI 编程方法论、上下文工程、Harness 工程理论、主流 AI Coding 工具链（Claude Code / Cursor / Codex 等）、大模型能力对比及 Agent 应用开发等前沿方向，以动手实践、工具对比、案例记录为主要学习载体，逐步构建在 AI 时代高效工程的完整知识体系。
 
-**核心学习方向（7 大板块）：**
-`AI 编程方法论` · `上下文工程` · `Harness 工程理论` · `AI Coding 工具实践` · `Agent 模式与编排` · `国内外 AI 动态` · `主流大模型`
+**核心学习方向（8 大板块）：**
+`AI 编程方法论` · `上下文工程` · `Harness 工程理论` · `AI Coding 工具实践` · `Agent 模式与编排` · `国内外 AI 动态` · `主流大模型` · `Claude Code 源码学习`
 
 > ⚠️ **关联项目分工说明**
 >
@@ -38,6 +38,7 @@
 | 5 | **Agent 模式与编排** | 各类 Agent 模式、Multi-Agent 编排、主流框架实战 |
 | 6 | **国内外 AI 动态** | 前沿论文、公司动态、评测榜单、政策观察 |
 | 7 | **主流大模型** | GPT / Claude / Gemini / DeepSeek 等能力深度对比 |
+| 8 | **Claude Code 源码学习** | TypeScript 源码阅读、核心模块分析、架构设计、扩展开发 |
 
 ---
 
@@ -50,6 +51,7 @@
 - [ ] 掌握各类 Agent 模式与 Multi-Agent 编排设计
 - [ ] 形成国内外前沿 AI 动态的持续追踪机制
 - [ ] 积累可复用的学习笔记、代码示例与最佳实践
+- [ ] 深入阅读 Claude Code 源码，理解 AI Coding 工具的内部实现机制
 
 ---
 
@@ -284,6 +286,38 @@
 
 </details>
 
+<details>
+<summary><b>八、Claude Code 源码学习</b></summary>
+
+### 🔍 源码概览
+- 仓库结构与技术栈（TypeScript / Node.js）
+- 核心模块划分与依赖关系
+- 构建、调试与本地运行方式
+
+### 🧩 核心模块分析
+- **CLI 入口**：命令解析、参数处理、模式分发
+- **对话引擎**：消息循环、流式输出、上下文管理
+- **工具系统**：内置工具（Bash / FileEdit / Read 等）注册与执行机制
+- **MCP Client**：MCP 协议客户端实现、Server 连接与工具发现
+- **Hooks 系统**：Hook 事件定义、触发时机、配置加载
+- **权限系统**：allowedTools 过滤、用户审批流程、dangerouslySkipPermissions
+- **上下文压缩**：自动摘要触发条件、压缩策略实现
+- **Sub-agent（Task 工具）**：并行子任务的创建与结果汇聚
+
+### 🏗️ 架构设计洞察
+- REPL 交互模型 vs. Headless 非交互模型的实现差异
+- 流式 SSE / Anthropic SDK 的集成方式
+- 多模型适配（`--model` 切换机制）
+- 配置文件加载优先级（全局 / 项目级 `CLAUDE.md` 合并策略）
+- 错误处理与重试机制
+
+### 🔌 扩展开发
+- 自定义内置工具的开发与注册
+- 自定义 MCP Server 与 Claude Code 的集成
+- 基于源码理解优化 CLAUDE.md 与 Hooks 配置
+
+</details>
+
 ---
 
 ## 🗂️ 目录结构
@@ -351,9 +385,21 @@ ai_coding_harness_engineering_study/
 │   ├── domestic/                      #   国内其他模型
 │   └── comparison/                    #   多模型横向对比
 │
-└── 08-tools-ecosystem/                # AI 工具生态与选型
-    ├── landscape/                     #   工具全景图
-    └── selection-guide/               #   选型指南
+├── 08-tools-ecosystem/                # AI 工具生态与选型
+│   ├── landscape/                     #   工具全景图
+│   └── selection-guide/               #   选型指南
+│
+└── 09-claude-code-source/             # Claude Code 源码学习（重点）
+    ├── overview/                      #   仓库结构与技术栈概览
+    ├── cli-entry/                     #   CLI 入口与命令解析
+    ├── conversation-engine/           #   对话引擎与消息循环
+    ├── tool-system/                   #   工具系统（内置工具注册与执行）
+    ├── mcp-client/                    #   MCP Client 实现
+    ├── hooks-system/                  #   Hooks 系统
+    ├── permission-system/             #   权限系统
+    ├── context-compression/           #   上下文压缩实现
+    ├── sub-agent/                     #   Sub-agent（Task 工具）
+    └── architecture-insights/        #   架构设计洞察与扩展开发
 ```
 
 > 📝 目录结构会随学习进展持续迭代，当前为初步规划。
@@ -481,6 +527,18 @@ ai_coding_harness_engineering_study/
 | | 国内其他模型（Qwen3 / 豆包 / 文心等）| 🔜 待开始 | - | |
 | | 开源模型（LLaMA / Mistral / Phi / Gemma）| 🔜 待开始 | - | |
 | | 多模型横向对比（代码 / 推理 / 多模态 / 价格）| 🔜 待开始 | - | |
+| **▶ 八、Claude Code 源码学习** | | | | |
+| | 仓库结构与技术栈概览（TypeScript / Node.js）| 🔜 待开始 | - | 🔑 重点 |
+| | CLI 入口、命令解析、模式分发 | 🔜 待开始 | - | |
+| | 对话引擎：消息循环 & 流式输出 & 上下文管理 | 🔜 待开始 | - | 🔑 重点 |
+| | 工具系统：内置工具注册与执行机制 | 🔜 待开始 | - | 🔑 重点 |
+| | MCP Client 实现与 Server 工具发现 | 🔜 待开始 | - | 🔑 重点 |
+| | Hooks 系统：事件定义 & 触发时机 & 配置加载 | 🔜 待开始 | - | 🔑 重点 |
+| | 权限系统：allowedTools 过滤 & 审批流程 | 🔜 待开始 | - | |
+| | 上下文压缩：触发条件与压缩策略实现 | 🔜 待开始 | - | |
+| | Sub-agent（Task 工具）并行子任务机制 | 🔜 待开始 | - | |
+| | 架构设计洞察（REPL vs Headless / 多模型适配）| 🔜 待开始 | - | |
+| | 扩展开发：自定义工具 & MCP Server 集成 | 🔜 待开始 | - | |
 
 ---
 
@@ -504,6 +562,7 @@ ai_coding_harness_engineering_study/
 | 2026-05-23 | v0.2.0 | 补充上下文工程、Agent 模式、AI Coding 工具深度实践等内容 |
 | 2026-05-23 | v0.3.0 | 更新标题、学习进度改为主子分层大表格 |
 | 2026-05-23 | v0.4.0 | 优化项目定位、关联项目分工说明、关联项目章节 |
+| 2026-05-23 | v0.5.0 | 新增「Claude Code 源码学习」方向（第八大板块） |
 
 ---
 
