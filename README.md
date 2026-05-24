@@ -12,10 +12,10 @@
 
 ## 📌 项目定位
 
-本项目是一个面向 **AI 工程提效** 的系统性学习仓库，**不是真实的生产项目**。聚焦于 AI 编程方法论、上下文工程、Harness 工程理论、主流 AI Coding 工具链（Claude Code / Cursor / Codex 等）、大模型能力对比及 Agent 应用开发等前沿方向，以动手实践、工具对比、案例记录为主要学习载体，逐步构建在 AI 时代高效工程的完整知识体系。
+本项目是一个面向 **AI 工程提效** 的系统性学习仓库，**不是真实的生产项目**。聚焦于 AI 编程方法论、上下文工程、AI 工具工程化、Harness 工程理论、主流 AI Coding 工具链（Claude Code / Cursor / Codex 等）、大模型能力对比及 Agent 应用开发等前沿方向，以动手实践、工具对比、案例记录为主要学习载体，逐步构建在 AI 时代高效工程的完整知识体系。
 
-**核心学习方向（8 大板块）：**
-`AI 编程方法论` · `上下文工程` · `Harness 工程理论` · `AI Coding 工具实践` · `Agent 模式与编排` · `国内外 AI 动态` · `主流大模型` · `Claude Code 源码学习`
+**核心学习方向（9 大板块）：**
+`AI 编程方法论` · `上下文工程` · `AI 工具工程化` · `Harness 工程理论` · `AI Coding 工具实践` · `Agent 模式与编排` · `国内外 AI 动态` · `主流大模型` · `Claude Code 源码学习`
 
 > ⚠️ **关联项目分工说明**
 >
@@ -25,33 +25,88 @@
 > |------|:----:|---------|
 > | [`java_study`](../java_study) | 🔵 基础理论 | Java 语言核心、数据结构与算法、JVM 原理、操作系统、计算机网络——**打地基** |
 > | [`java_fullstack_ai_agent_study`](../java_fullstack_ai_agent_study) | 🟠 工程实践 | Spring 生态、分布式架构、大数据、存储中间件、风控爬虫、数据分析、多语言、AI/Agent——**做系统** |
-> | **本项目**（`ai_coding_harness_engineering_study`） | 🟣 AI 工程 | AI 编程方法论、上下文工程、Harness 理论、AI Coding 工具链、大模型与 Agent 开发——**用 AI 提效** |
+> | **本项目**（`ai_coding_harness_engineering_study`） | 🟣 AI 工程 | AI 编程方法论、上下文工程、AI 工具工程化、Harness 理论、AI Coding 工具链、大模型与 Agent 开发——**用 AI 提效** |
 
 在 AI 重塑软件工程的时代背景下，本仓库聚焦以下核心方向：
 
 | # | 方向 | 核心关注点 |
 |---|------|-----------|
-| 1 | **AI 编程（AI Coding）** | 方法论、Prompt Engineering、Vibe Coding、人机协作工作流 |
-| 2 | **上下文工程** | 上下文窗口、压缩、Tools、MCP、Skill、Command、Hooks、安全 |
-| 3 | **Harness 工程理论** | 测试线束、工程质量保障、AI 代码验证体系、CI/CD 与 AI 融合 |
-| 4 | **AI Coding 工具实践** | Claude Code、Codex、Cursor、CatPaw 等深度使用与最佳实践 |
-| 5 | **Agent 模式与编排** | 各类 Agent 模式、Multi-Agent 编排、主流框架实战 |
-| 6 | **国内外 AI 动态** | 前沿论文、公司动态、评测榜单、政策观察 |
-| 7 | **主流大模型** | GPT / Claude / Gemini / DeepSeek 等能力深度对比 |
-| 8 | **Claude Code 源码学习** | TypeScript 源码阅读、核心模块分析、架构设计、扩展开发 |
+| 1 | **AI 编程（AI Coding）** | 方法论、Prompt Engineering、Vibe Coding、Plan/Act 模式、规则文件工程化、局限性认知 |
+| 2 | **上下文工程** | 上下文窗口、压缩、Memory、RAG、Tools（工具调用）、Structured Output（结构化输出）|
+| 3 | **AI 工具工程化** | Rules 文件体系、MCP、Skill、Command、Hooks、AI 安全 |
+| 4 | **Harness 工程理论** | 测试线束、AI 代码验证、Eval 框架（LLM-as-Judge / RAGAS）、CI/CD 与 AI 融合 |
+| 5 | **AI Coding 工具实践** | Claude Code、Codex、Cursor、Windsurf、CatPaw 等深度使用与最佳实践 |
+| 6 | **Agent 模式与编排** | Agent 模式、Multi-Agent 编排、Computer Use / Browser Use、Long-running Agent、安全对齐 |
+| 7 | **国内外 AI 动态** | 前沿论文、公司动态、评测榜单、政策观察 |
+| 8 | **主流大模型** | GPT / Claude / Gemini / DeepSeek 等能力深度对比 |
+| 9 | **Claude Code 源码学习** | TypeScript 源码阅读、核心模块分析、架构设计、扩展开发 |
 
 ---
 
 ## 🎯 学习目标
 
-- [ ] 建立 AI 辅助编程的完整认知框架，掌握 Vibe Coding 方法论
-- [ ] 深入理解上下文工程：窗口管理、压缩策略、Tools / MCP / Hooks 机制
-- [ ] 理解 Harness 工程理论在 AI 时代的实践意义
+- [ ] 建立 AI 辅助编程的完整认知框架，掌握 Vibe Coding 方法论，清晰认知 AI 编程的局限性
+- [ ] 深入理解上下文工程：窗口管理、压缩策略、Memory、RAG、Tools、Structured Output
+- [ ] 掌握规则文件体系工程化（CLAUDE.md / .cursorrules / AGENTS.md）的最佳实践
+- [ ] 掌握 AI 工具工程化核心能力：MCP、Skill/Command、Hooks 及 AI 安全
+- [ ] 建立 AI 输出质量保障体系：Eval 框架、LLM-as-Judge、RAGAS、Braintrust 等工具实践
 - [ ] 深度掌握 Claude Code、Codex CLI、Cursor 等主流 AI 编程工具
-- [ ] 掌握各类 Agent 模式与 Multi-Agent 编排设计
+- [ ] 掌握各类 Agent 模式与 Multi-Agent 编排设计，理解 Computer Use / Browser Use 原理与实践
+- [ ] 理解 Long-running Agent 的工程挑战及 Agent 安全对齐的核心原则
 - [ ] 形成国内外前沿 AI 动态的持续追踪机制
 - [ ] 积累可复用的学习笔记、代码示例与最佳实践
 - [ ] 深入阅读 Claude Code 源码，理解 AI Coding 工具的内部实现机制
+
+---
+
+## 🗺️ 学习路径建议
+
+> 9 大板块并非孤立的，它们之间存在依赖关系。以下是建议的学习路径，可根据个人基础灵活调整。
+
+### 📍 推荐入门顺序
+
+```
+[基础认知层]
+① AI 编程方法论（一）         ← 建立基本认知框架，最先入手
+          ↓
+[核心原理层]
+② 上下文工程（二）            ← 理解 AI 工作原理，是后续一切的基础
+③ 主流大模型（八）            ← 了解各模型能力差异，辅助工具选型
+          ↓
+[工程实践层]
+④ AI 工具工程化（三）         ← 学会扩展和定制 AI 工具
+⑤ AI Coding 工具深度实践（五）← 掌握日常开发提效的核心工具
+          ↓
+[进阶方向层]
+⑥ Agent 模式与编排（六）      ← 进入 Agent 应用开发
+⑦ Harness 工程理论（四）      ← 保障 AI 输出质量的工程体系
+          ↓
+[深度研究层]
+⑧ Claude Code 源码学习（九）  ← 从源码理解 AI 工具的内部机制
+⑨ 国内外 AI 动态（七）        ← 持续追踪前沿，贯穿全程
+```
+
+### 🔗 板块间关键依赖关系
+
+| 学习这个 | 需要先了解 | 关系说明 |
+|---------|-----------|---------|
+| AI 工具工程化（MCP / Hooks） | 上下文工程（Tools） | MCP 是 Function Calling 的协议化扩展 |
+| Agent 记忆管理 | 上下文工程（Memory / RAG） | Agent 记忆 = 将 Memory 技术用于 Agent 设计 |
+| Harness / Eval 框架 | AI 编程方法论 | 先理解 AI 编程流程，才能设计验证体系 |
+| Claude Code 源码 | AI 工具工程化（MCP / Hooks） | 源码学习需要先理解 MCP / Hooks 的概念 |
+| Computer Use | Agent 基础模式 | Computer Use 是 ReAct 模式在 GUI 场景的应用 |
+
+### ⏰ 时间分配参考
+
+| 优先级 | 板块 | 预估投入 | 说明 |
+|--------|------|---------|------|
+| 🔴 高 | AI Coding 工具实践（Claude Code / Cursor） | 持续投入 | 直接影响日常开发效率 |
+| 🔴 高 | 上下文工程 | 2-3 周 | 底层原理，影响深远 |
+| 🟠 中高 | AI 工具工程化（MCP / Hooks） | 1-2 周 | 工程化提效的关键 |
+| 🟠 中高 | Agent 模式与编排 | 3-4 周 | 进入 Agent 开发的核心 |
+| 🟡 中 | Harness / Eval 框架 | 1-2 周 | 质量保障，可并行学习 |
+| 🟡 中 | Claude Code 源码 | 按兴趣深入 | 深度研究方向 |
+| 🟢 低 | AI 动态追踪 | 碎片化持续 | 保持视野，非集中学习 |
 
 ---
 
@@ -66,14 +121,32 @@
   - Few-shot / Chain-of-Thought 编程提示技巧
   - 角色扮演式提示（Persona Prompting）
 - **Vibe Coding**：氛围编程的理念、边界与最佳实践
+- **Plan Mode vs. Act Mode**：先规划后执行的工作流理念
+  - 任务分解与规划（Planning）阶段的设计
+  - 执行（Acting）阶段的验证与迭代策略
+- **多轮对话设计**：如何有效地与 AI 持续迭代
+  - 会话状态保持与上下文传递策略
+  - 增量式开发：小步前进、及时确认
+  - 有效反馈格式：描述期望结果而非操作步骤
+- **规则文件体系（Rules Files）工程化**
+  - `CLAUDE.md` / `.cursorrules` / `AGENTS.md` / `GEMINI.md` 的作用与差异
+  - 项目级 vs. 用户级规则文件的管理策略
+  - 规则内容设计：代码规范、架构约束、工作流指引
 - AI 与人类协作开发的工作流设计
 - AI 编程的质量保障与 Code Review 策略
-- AI 生成代码的可信度评估与风险控制
+- **AI 编程的局限性认知**
+  - 幻觉（Hallucination）：错误代码、虚假 API 引用
+  - 错误传播：一步出错、后续雪崩
+  - Over-engineering 倾向与技术债积累
+  - 长会话退化：上下文污染导致质量下降
+  - 何时该放弃 AI、手动接管的判断依据
 
 </details>
 
 <details>
 <summary><b>二、上下文工程（Context Engineering）</b></summary>
+
+> 上下文工程的本质：**系统性地设计和管理传递给模型的信息内容**——喂给模型什么、怎么喂、喂多少。
 
 ### 📐 上下文窗口（Context Window）
 - 上下文窗口的概念、限制与演进（4K → 1M tokens）
@@ -83,9 +156,22 @@
 
 ### 🗜️ 上下文压缩（Context Compression）
 - 对话历史裁剪与摘要策略
-- RAG（检索增强生成）作为上下文扩展手段
 - 滑动窗口 / 重要性排序 / 动态压缩方法
-- 工具层面的上下文管理（如 Claude Code 的自动压缩）
+- 工具层面的上下文管理（如 Claude Code 的 `/compact` 自动压缩）
+
+### 🧠 Memory（记忆管理）
+- 短期记忆：对话历史的保留与裁剪策略
+- 长期记忆：向量数据库存储与检索（Chroma / Milvus / Pinecone）
+- 实体记忆：结构化知识的抽取与注入
+- 跨会话记忆持久化方案
+
+### 🔍 RAG（检索增强生成）
+- RAG 的原理：将外部知识检索后注入上下文
+- 文档切分（Chunking）策略与 Embedding 模型选型
+- 检索召回：向量检索 / 关键词检索 / 混合检索
+- Reranker（重排序）提升检索质量
+- RAG vs. Fine-tuning 的适用场景对比
+- GraphRAG / Agentic RAG 进阶方案
 
 ### 🔧 Tools（工具调用）
 - Function Calling / Tool Use 基本原理
@@ -94,6 +180,42 @@
 - 并行工具调用 vs. 顺序工具调用
 - 工具调用的错误处理与重试策略
 - 主流模型工具调用能力对比
+
+### 📤 Structured Output（结构化输出）
+> 上下文工程的**输出侧**：控制模型生成内容的格式与结构，是工程化落地的基础。
+
+- **JSON Mode**：强制模型输出合法 JSON 的机制与各模型实现差异
+- **JSON Schema 约束**：精确指定字段类型、必选项、枚举值
+- **XML 格式输出**：Claude 擅长的结构化标签格式及其解析
+- **Pydantic / TypeScript 类型约束**：代码层面的结构化输出验证
+- **Structured Output vs. Function Calling** 的选型依据
+- 输出解析的健壮性：部分失败处理、格式修复策略
+- 流式输出（Streaming）下的结构化内容解析技巧
+
+</details>
+
+<details>
+<summary><b>三、AI 工具工程化</b></summary>
+
+> AI 工具工程化关注的是**工具层面的扩展、集成与行为控制**——如何让 AI 工具连接更多能力、更安全地运行、更灵活地定制。
+
+### 📋 Rules / Instructions 文件工程化
+> AI 工具的"宪法"：通过项目规则文件持续、稳定地约束 AI 行为，避免每次对话重复说明。
+
+- **各工具规则文件对比**
+  - `CLAUDE.md`（Claude Code）：项目上下文、代码约定、工作流指引
+  - `.cursorrules` / `.cursor/rules/*.mdc`（Cursor）：AI 行为规则，支持 glob 过滤
+  - `AGENTS.md`（Codex CLI / OpenAI）：项目说明与 Agent 行为约束
+  - `GEMINI.md`（Gemini CLI）：Google 工具链的项目规则文件
+- **规则文件的层级与合并策略**：全局级 → 项目根级 → 子目录级，优先级与覆盖规则
+- **规则内容工程化设计**
+  - 技术栈说明与依赖约定
+  - 代码风格与命名规范
+  - 禁止行为清单（不允许修改的文件、目录）
+  - 测试要求与 CI 集成说明
+  - 常用命令速查（build、test、lint、deploy）
+- **规则文件的版本管理与团队协作**：纳入 Git 管理、团队共享最佳实践
+- **规则冲突与优先级调试**：如何排查 AI 行为与预期不符的原因
 
 ### 🔌 MCP（Model Context Protocol）
 - MCP 协议概念、设计理念与架构
@@ -118,14 +240,13 @@
 - 在 Claude Code、Cursor、CatPaw 中的 Command 实践
 
 ### 🪝 Hooks（钩子）
-- Hooks 机制：事件驱动的上下文注入
+- Hooks 机制：工具执行生命周期的回调与行为控制
 - Pre-tool / Post-tool Hook 的应用场景
 - 会话级别 Hook vs. 全局 Hook
-- Hook 用于自动注入上下文、日志记录、结果校验
-- Claude Code Hooks 配置实践
-- 安全性考量：Hook 的权限控制
+- Hook 用于自动注入上下文、日志记录、结果校验、格式化输出
+- Claude Code Hooks 配置实践（PreToolUse / PostToolUse / Stop / Notification）
 
-### 🔒 安全（Security）
+### 🔒 AI 安全（Security）
 - AI 编程中的安全风险分类
   - Prompt Injection（提示注入）攻击原理与防御
   - 间接注入（Indirect Prompt Injection）
@@ -139,24 +260,47 @@
 </details>
 
 <details>
-<summary><b>三、Harness 工程理论</b></summary>
+<summary><b>四、Harness 工程理论</b></summary>
 
-- **Harness 测试线束**（Test Harness）基本概念与设计思想
+### 🔩 测试线束基础（Test Harness）
+- **Harness 测试线束**基本概念与设计思想
 - 测试线束的组成：驱动程序（Driver）、桩（Stub）、Mock、Spy
 - 工程测试体系的构建：单元测试 → 集成测试 → E2E 测试
-- **AI 时代的 Harness 新内涵**
-  - AI 生成代码的自动化验证体系
-  - 基于 LLM 的测试用例生成
-  - AI Coding 工具的质量评估 Harness
-  - Benchmark 驱动的 AI 能力评测体系（SWE-bench、HumanEval 等）
-- 持续集成 / 持续交付（CI/CD）与 AI 的结合
-  - AI 辅助 Code Review 在 CI 中的集成
-  - 自动化测试生成流水线
+- **确定性测试 vs. 概率性测试**：AI 输出的不确定性对传统测试方法的挑战
+
+### 🧪 AI 时代的 Harness 新内涵
+- AI 生成代码的自动化验证体系
+- 基于 LLM 的测试用例生成（TestGen）
+- AI Coding 工具的质量评估 Harness
+- Benchmark 驱动的 AI 能力评测体系（SWE-bench、HumanEval 等）
+
+### 📐 Eval 框架（AI 评估工程）
+> 专为 LLM 输出设计的质量评估体系——与传统单元测试逻辑完全不同。
+
+- **Eval 的核心概念**：Golden Set（标准数据集）、评估指标、评估流水线
+- **LLM-as-Judge**：用大模型评估大模型输出质量的方法论
+  - 评估提示词设计（Pointwise / Pairwise 评分）
+  - 评估偏差（Position Bias / Verbosity Bias）的识别与规避
+  - 人工标注 vs. LLM 评估的一致性对齐
+- **RAG 评估框架 RAGAS**：上下文相关性、答案忠实度、答案相关性三维度
+- **代码生成评估**：功能正确性（Pass@k）、语法合法性、测试通过率
+- **主流 Eval 框架工具**
+  - [Braintrust](https://braintrust.dev)：生产级 LLM 评估与实验追踪
+  - [OpenAI Evals](https://github.com/openai/evals)：OpenAI 官方评估框架
+  - [RAGAS](https://ragas.io)：RAG 管道专项评估
+  - [DeepEval](https://deepeval.com)：多指标 LLM 评测框架
+  - [PromptFoo](https://promptfoo.dev)：Prompt 测试与红队评估
+- **回归测试**：Prompt 变更后的质量回归检测方案
+
+### 🔄 持续集成 / 持续交付（CI/CD）与 AI 结合
+- AI 辅助 Code Review 在 CI 中的集成
+- 自动化测试生成流水线
+- Eval 流水线的 CI 化：每次 Prompt 变更自动触发评估
 
 </details>
 
 <details>
-<summary><b>四、AI Coding 工具深度实践</b></summary>
+<summary><b>五、AI Coding 工具深度实践</b></summary>
 
 ### 🖥️ Claude Code（重点）
 - 安装、配置与基本工作流
@@ -216,7 +360,7 @@
 </details>
 
 <details>
-<summary><b>五、Agent 模式与编排</b></summary>
+<summary><b>六、Agent 模式与编排</b></summary>
 
 ### 🧠 Agent 基础模式
 | 模式 | 描述 | 适用场景 |
@@ -247,17 +391,48 @@
 | **Pydantic AI** | 类型安全，结构化输出 | 生产级数据处理 |
 
 ### ⚙️ Agent 核心能力
-- **记忆管理**：短期记忆（对话历史）/ 长期记忆（向量数据库）/ 实体记忆
+- **记忆管理**（原理详见「二、上下文工程 → Memory」，此处关注在 Agent 中的应用）
+  - In-context Memory（对话历史）/ External Memory（向量数据库）/ Episodic Memory（情节记忆）
+  - 跨任务记忆复用与记忆更新策略
 - **工具调用**：内置工具 vs. MCP 工具 vs. 自定义工具
-- **状态管理**：有状态 vs. 无状态 Agent 设计
-- **中断与恢复**：Human-in-the-loop 审批节点
+- **状态管理**：有状态 vs. 无状态 Agent 设计，状态持久化方案
+- **中断与恢复**：Human-in-the-loop 审批节点，检查点（Checkpoint）机制
 - **可观测性**：LangSmith / LangFuse / OpenTelemetry 集成
-- **评估体系**：Agent 行为评测、Trajectory 评估
+- **评估体系**：Agent 行为评测、Trajectory 评估（轨迹评估）
+
+### 🖥️ Computer Use / Browser Use（计算机操控）
+> 2024-2025 年 Agent 领域最重大突破之一：模型直接感知和操控 UI 界面。
+
+- **Anthropic Computer Use**：Claude 直接操控桌面（截图感知 → 鼠标/键盘操作）
+- **Browser Use**：开源框架，将浏览器作为 Agent 的行动空间
+  - DOM 解析 vs. 视觉截图两种感知方式对比
+  - 网页导航、表单填写、数据抓取等标准动作
+- **OpenAI Operator / CUA（Computer Use Agent）**：OpenAI 的 Web 任务执行代理
+- **GUI Agent 的技术挑战**：页面状态不稳定、动态渲染、错误恢复
+- **Computer Use 安全边界**：权限隔离、操作可审计、沙箱执行
+- 实际应用场景：自动化办公、爬虫替代、UI 测试
+
+### ⏱️ Long-running Agent（长时异步 Agent）
+- **异步任务模式**：Agent 不阻塞主线程，后台执行长时任务
+- **任务队列设计**：任务提交 → 轮询状态 → 结果回调的工程模式
+- **检查点与断点续传**：中间状态持久化，防止长任务全量重试
+- **超时与熔断策略**：任务超时处理、失败降级、重试次数控制
+- **用户通知机制**：长任务完成后的通知回调（Webhook / 消息推送）
+
+### 🛡️ Agent 安全与对齐（Alignment & Safety）
+> 与「三、AI 工具工程化 → AI 安全」有所区分：此处聚焦 Agent **目标对齐**与**行为边界控制**。
+
+- **目标对齐问题**：Agent 是否真正理解并执行了用户意图
+- **指令遵循 vs. 目标偷换**：长任务中 Agent 偏离原始目标的风险
+- **最小权限原则**：Agent 只拥有完成当前任务所需的最小工具集
+- **不可逆操作防护**：文件删除、数据库写入、支付操作的强制审批
+- **Agent 输出的可解释性**：让 Agent 暴露推理过程，便于人工审查
+- **红队测试（Red Teaming）**：主动测试 Agent 的边界突破能力
 
 </details>
 
 <details>
-<summary><b>六、国内外 AI 动态</b></summary>
+<summary><b>七、国内外 AI 动态</b></summary>
 
 - 前沿论文与技术博客追踪
 - 国内外主流 AI 公司动态
@@ -272,7 +447,7 @@
 </details>
 
 <details>
-<summary><b>七、主流大模型学习</b></summary>
+<summary><b>八、主流大模型学习</b></summary>
 
 - **OpenAI 系列**：GPT-4o、o1、o3、o3-mini、o4-mini 等
 - **Anthropic 系列**：Claude 3 Haiku / Sonnet / Opus、Claude 4.x
@@ -287,7 +462,7 @@
 </details>
 
 <details>
-<summary><b>八、Claude Code 源码学习</b></summary>
+<summary><b>九、Claude Code 源码学习</b></summary>
 
 ### 🔍 源码概览
 - 仓库结构与技术栈（TypeScript / Node.js）
@@ -329,24 +504,33 @@ ai_coding_harness_engineering_study/
 ├── 01-ai-coding/                      # AI 编程方法论与实践
 │   ├── prompt-engineering/            #   Prompt 工程技巧
 │   ├── vibe-coding/                   #   Vibe Coding 理念与实践
+│   ├── rules-files/                   #   规则文件体系工程化（CLAUDE.md 等）
+│   ├── limitations/                   #   AI 编程局限性认知
 │   └── workflow/                      #   人机协作工作流设计
 │
-├── 02-context-engineering/            # 上下文工程（重点）
+├── 02-context-engineering/            # 上下文工程
 │   ├── context-window/                #   上下文窗口管理
 │   ├── context-compression/           #   上下文压缩策略
+│   ├── memory/                        #   Memory 记忆管理（原理层）
+│   ├── rag/                           #   RAG 检索增强生成
 │   ├── tools/                         #   工具调用（Function Calling）
+│   └── structured-output/             #   结构化输出（JSON / XML / Pydantic）
+│
+├── 03-ai-tool-engineering/            # AI 工具工程化
+│   ├── rules-instructions/            #   Rules/Instructions 文件工程化
 │   ├── mcp/                           #   MCP 协议与实践
 │   ├── skill/                         #   Skill 体系设计
-│   ├── command/                       #   自定义命令
+│   ├── command/                       #   自定义命令（Slash Command）
 │   ├── hooks/                         #   Hooks 机制
 │   └── security/                      #   AI 安全（Prompt Injection 等）
 │
-├── 03-harness/                        # Harness 工程理论
+├── 04-harness/                        # Harness 工程理论
 │   ├── test-harness-basics/           #   测试线束基础
 │   ├── ai-code-validation/            #   AI 生成代码验证体系
+│   ├── eval-framework/                #   Eval 框架（LLM-as-Judge / RAGAS 等）
 │   └── benchmark/                     #   AI 能力评测 Benchmark
 │
-├── 04-tools/                          # AI Coding 工具深度实践
+├── 05-tools/                          # AI Coding 工具深度实践
 │   ├── claude-code/                   #   Claude Code（重点）
 │   │   ├── claude-md/                 #     CLAUDE.md 设计实践
 │   │   ├── hooks/                     #     Hooks 配置
@@ -362,7 +546,7 @@ ai_coding_harness_engineering_study/
 │   ├── gemini-cli/                    #   Gemini CLI
 │   └── others/                        #   Aider、Continue、OpenHands 等
 │
-├── 05-agent/                          # Agent 模式与编排
+├── 06-agent/                          # Agent 模式与编排
 │   ├── patterns/                      #   Agent 设计模式
 │   │   ├── react/                     #     ReAct 模式
 │   │   ├── plan-execute/              #     Plan-and-Execute
@@ -373,11 +557,14 @@ ai_coding_harness_engineering_study/
 │   │   ├── autogen/                   #     AutoGen 实践
 │   │   ├── crewai/                    #     CrewAI 实践
 │   │   └── swarm/                     #     Swarm 模式
+│   ├── computer-use/                  #   Computer Use / Browser Use（GUI Agent）
+│   ├── long-running-agent/            #   Long-running Agent（异步任务）
+│   ├── alignment/                     #   Agent 安全与对齐
 │   └── observability/                 #   Agent 可观测性
 │
-├── 06-ai-news/                        # 国内外 AI 动态追踪
+├── 07-ai-news/                        # 国内外 AI 动态追踪
 │
-├── 07-models/                         # 主流大模型学习笔记
+├── 08-models/                         # 主流大模型学习笔记
 │   ├── openai/                        #   GPT / o 系列
 │   ├── anthropic/                     #   Claude 系列
 │   ├── google/                        #   Gemini 系列
@@ -385,11 +572,11 @@ ai_coding_harness_engineering_study/
 │   ├── domestic/                      #   国内其他模型
 │   └── comparison/                    #   多模型横向对比
 │
-├── 08-tools-ecosystem/                # AI 工具生态与选型
+├── 09-tools-ecosystem/                # AI 工具生态与选型
 │   ├── landscape/                     #   工具全景图
 │   └── selection-guide/               #   选型指南
 │
-└── 09-claude-code-source/             # Claude Code 源码学习（重点）
+└── 10-claude-code-source/             # Claude Code 源码学习（重点）
     ├── overview/                      #   仓库结构与技术栈概览
     ├── cli-entry/                     #   CLI 入口与命令解析
     ├── conversation-engine/           #   对话引擎与消息循环
@@ -458,6 +645,17 @@ ai_coding_harness_engineering_study/
 | [Swarm](https://github.com/openai/swarm) | OpenAI | 轻量级 Agent 交接，实验性 |
 | [Pydantic AI](https://ai.pydantic.dev) | Pydantic | 类型安全，生产级结构化输出 |
 
+### Eval 评估工具速查
+
+| 工具 | 维护方 | 核心能力 |
+|------|--------|---------|
+| [Braintrust](https://braintrust.dev) | Braintrust | 生产级 LLM 评估 + 实验追踪 + 数据集管理 |
+| [OpenAI Evals](https://github.com/openai/evals) | OpenAI | 官方评估框架，标准化评测套件 |
+| [RAGAS](https://ragas.io) | Exploding Gradients | RAG 管道专项评估（忠实度 / 相关性）|
+| [DeepEval](https://deepeval.com) | Confident AI | 多指标 LLM 评测，集成 CI/CD |
+| [PromptFoo](https://promptfoo.dev) | PromptFoo | Prompt 回归测试 + 红队安全评估 |
+| [LangSmith](https://smith.langchain.com) | LangChain | Trace 追踪 + 数据集 + 评估一体化 |
+
 ---
 
 ## 📊 学习进度
@@ -470,24 +668,38 @@ ai_coding_harness_engineering_study/
 | | AI 辅助编程核心概念与方法论 | 🔜 待开始 | - | |
 | | Prompt Engineering（System Prompt / Few-shot / CoT）| 🔜 待开始 | - | |
 | | Vibe Coding 理念与边界 | 🔜 待开始 | - | |
+| | Plan Mode vs. Act Mode 工作流理念 | 🔜 待开始 | - | |
+| | 多轮对话设计（增量开发 / 有效反馈格式）| 🔜 待开始 | - | |
+| | 规则文件体系工程化（CLAUDE.md / .cursorrules / AGENTS.md）| 🔜 待开始 | - | 🔑 重点 |
 | | 人机协作工作流设计 | 🔜 待开始 | - | |
 | | AI 编程质量保障与 Code Review 策略 | 🔜 待开始 | - | |
+| | AI 编程局限性认知（幻觉 / 错误传播 / 退化）| 🔜 待开始 | - | |
 | **▶ 二、上下文工程（Context Engineering）** | | | | |
 | | 上下文窗口（Context Window）原理与策略 | 🔜 待开始 | - | |
-| | 上下文压缩（裁剪 / 摘要 / RAG / 动态压缩）| 🔜 待开始 | - | |
-| | Tools / Function Calling 机制 | 🔜 待开始 | - | |
-| | MCP 协议原理与实践 | 🔜 待开始 | - | |
+| | 上下文压缩（裁剪 / 摘要 / 动态压缩）| 🔜 待开始 | - | |
+| | Memory 记忆管理（短期 / 长期 / 实体记忆）| 🔜 待开始 | - | 原理层，六中讲应用 |
+| | RAG 检索增强生成（Chunking / Embedding / 混合检索）| 🔜 待开始 | - | |
+| | Tools / Function Calling 工具调用机制 | 🔜 待开始 | - | MCP 是其协议扩展 |
+| | Structured Output 结构化输出（JSON / XML / Pydantic）| 🔜 待开始 | - | |
+| **▶ 三、AI 工具工程化** | | | | |
+| | Rules / Instructions 文件工程化（各工具规则文件体系）| 🔜 待开始 | - | 🔑 重点 |
+| | MCP 协议原理与实践（Server / Client / 自定义）| 🔜 待开始 | - | 🔑 重点 |
 | | Skill 体系设计（概念 / 触发 / 管理）| 🔜 待开始 | - | |
 | | Command（Slash Command）设计与实践 | 🔜 待开始 | - | |
-| | Hooks 机制（Pre/Post-tool / 事件驱动）| 🔜 待开始 | - | |
+| | Hooks 机制（Pre/Post-tool / 行为控制）| 🔜 待开始 | - | 🔑 重点 |
 | | AI 安全（Prompt Injection / 权限控制 / 沙箱）| 🔜 待开始 | - | |
-| **▶ 三、Harness 工程理论** | | | | |
+| **▶ 四、Harness 工程理论** | | | | |
 | | Harness 测试线束基本概念（Driver / Stub / Mock）| 🔜 待开始 | - | |
+| | 确定性测试 vs. 概率性测试的工程挑战 | 🔜 待开始 | - | |
 | | AI 生成代码的自动化验证体系 | 🔜 待开始 | - | |
-| | 基于 LLM 的测试用例生成 | 🔜 待开始 | - | |
+| | 基于 LLM 的测试用例生成（TestGen）| 🔜 待开始 | - | |
 | | Benchmark 评测体系（SWE-bench / HumanEval）| 🔜 待开始 | - | |
-| | CI/CD 与 AI 结合（AI Code Review 流水线）| 🔜 待开始 | - | |
-| **▶ 四、AI Coding 工具深度实践** | | | | |
+| | Eval 框架核心概念（Golden Set / 评估流水线）| 🔜 待开始 | - | 🔑 重点 |
+| | LLM-as-Judge（Pointwise / Pairwise / 偏差规避）| 🔜 待开始 | - | 🔑 重点 |
+| | RAG 评估框架 RAGAS（相关性 / 忠实度 / 质量）| 🔜 待开始 | - | |
+| | Eval 工具链（Braintrust / OpenAI Evals / DeepEval / PromptFoo）| 🔜 待开始 | - | |
+| | CI/CD 与 AI 结合（Eval 流水线 / Code Review 流水线）| 🔜 待开始 | - | |
+| **▶ 五、AI Coding 工具深度实践** | | | | |
 | | Claude Code — 基础工作流 & CLAUDE.md | 🔜 待开始 | - | 🔑 重点 |
 | | Claude Code — Hooks 配置实践 | 🔜 待开始 | - | 🔑 重点 |
 | | Claude Code — MCP 集成 & 自定义 Server | 🔜 待开始 | - | 🔑 重点 |
@@ -502,7 +714,7 @@ ai_coding_harness_engineering_study/
 | | CatPaw — Skill 体系 & 内网工具集成 | 🔜 待开始 | - | |
 | | Gemini CLI — 百万 token 上下文实践 | 🔜 待开始 | - | |
 | | 其他工具（Aider / Continue / OpenHands）| 🔜 待开始 | - | |
-| **▶ 五、Agent 模式与编排** | | | | |
+| **▶ 六、Agent 模式与编排** | | | | |
 | | Agent 基础模式（ReAct / Plan-Execute / Reflection）| 🔜 待开始 | - | |
 | | Tree of Thoughts / Self-Ask / Reflexion | 🔜 待开始 | - | |
 | | Multi-Agent 模式（Orchestrator / Supervisor / Swarm）| 🔜 待开始 | - | |
@@ -510,16 +722,19 @@ ai_coding_harness_engineering_study/
 | | LangGraph 图结构编排实践 | 🔜 待开始 | - | |
 | | AutoGen 多 Agent 对话实践 | 🔜 待开始 | - | |
 | | CrewAI 角色任务编排实践 | 🔜 待开始 | - | |
-| | Agent 记忆管理（短期 / 长期 / 实体记忆）| 🔜 待开始 | - | |
+| | Agent 记忆管理（In-context / External / Episodic）| 🔜 待开始 | - | 原理见板块二 |
 | | Agent 可观测性（LangSmith / LangFuse）| 🔜 待开始 | - | |
 | | Agent 评估（Trajectory 评估体系）| 🔜 待开始 | - | |
-| **▶ 六、国内外 AI 动态** | | | | |
+| | Computer Use / Browser Use（GUI Agent）| 🔜 待开始 | - | 🔑 重点 |
+| | Long-running Agent（异步任务 / 检查点 / 断点续传）| 🔜 待开始 | - | |
+| | Agent 安全与对齐（目标对齐 / 最小权限 / 红队测试）| 🔜 待开始 | - | |
+| **▶ 七、国内外 AI 动态** | | | | |
 | | 前沿论文 & 技术博客追踪 | 🔜 待开始 | - | 持续更新 |
 | | 海外 AI 公司动态（OpenAI / Anthropic / Google / Meta）| 🔜 待开始 | - | 持续更新 |
 | | 国内 AI 公司动态（DeepSeek / 字节 / 阿里 / 智谱等）| 🔜 待开始 | - | 持续更新 |
 | | 评测榜单解读（LMSYS / SWE-bench / LiveCodeBench）| 🔜 待开始 | - | |
 | | AI 政策法规 & 行业生态观察 | 🔜 待开始 | - | |
-| **▶ 七、主流大模型学习** | | | | |
+| **▶ 八、主流大模型学习** | | | | |
 | | OpenAI 系列（GPT-4o / o1 / o3 / o4 系列）| 🔜 待开始 | - | |
 | | Anthropic Claude 系列（3.x / 4.x）| 🔜 待开始 | - | |
 | | Google Gemini 系列（1.5 / 2.0 / 2.5）| 🔜 待开始 | - | |
@@ -527,7 +742,7 @@ ai_coding_harness_engineering_study/
 | | 国内其他模型（Qwen3 / 豆包 / 文心等）| 🔜 待开始 | - | |
 | | 开源模型（LLaMA / Mistral / Phi / Gemma）| 🔜 待开始 | - | |
 | | 多模型横向对比（代码 / 推理 / 多模态 / 价格）| 🔜 待开始 | - | |
-| **▶ 八、Claude Code 源码学习** | | | | |
+| **▶ 九、Claude Code 源码学习** | | | | |
 | | 仓库结构与技术栈概览（TypeScript / Node.js）| 🔜 待开始 | - | 🔑 重点 |
 | | CLI 入口、命令解析、模式分发 | 🔜 待开始 | - | |
 | | 对话引擎：消息循环 & 流式输出 & 上下文管理 | 🔜 待开始 | - | 🔑 重点 |
@@ -550,7 +765,7 @@ ai_coding_harness_engineering_study/
 |------|:----:|---------|-------|
 | [`java_study`](../java_study) | 🔵 基础理论 | Java 语言核心、数据结构与算法、JVM 原理、操作系统、计算机网络 | 打地基 |
 | [`java_fullstack_ai_agent_study`](../java_fullstack_ai_agent_study) | 🟠 工程实践 | Spring 生态、分布式架构、大数据生态、存储中间件、风控爬虫、数据分析、多语言、前端、AI/Agent 工程化 | 做系统 |
-| **本项目**（`ai_coding_harness_engineering_study`） | 🟣 AI 工程 | AI 编程方法论、上下文工程、Harness 理论、AI Coding 工具链（Claude Code / Cursor / Codex）、大模型对比、Agent 开发 | 用 AI 提效 |
+| **本项目**（`ai_coding_harness_engineering_study`） | 🟣 AI 工程 | AI 编程方法论、上下文工程、AI 工具工程化、Harness 理论、AI Coding 工具链（Claude Code / Cursor / Codex）、大模型对比、Agent 开发 | 用 AI 提效 |
 
 ---
 
@@ -563,6 +778,8 @@ ai_coding_harness_engineering_study/
 | 2026-05-23 | v0.3.0 | 更新标题、学习进度改为主子分层大表格 |
 | 2026-05-23 | v0.4.0 | 优化项目定位、关联项目分工说明、关联项目章节 |
 | 2026-05-23 | v0.5.0 | 新增「Claude Code 源码学习」方向（第八大板块） |
+| 2026-05-23 | v0.6.0 | 按方案 B 精准拆分：上下文工程精简为核心五项，新增「AI 工具工程化」独立方向（MCP/Skill/Command/Hooks/安全），全文编号顺延至九大板块 |
+| 2026-05-24 | v0.7.0 | 全局地图完整性补全：新增规则文件工程化、Structured Output、Eval 框架（LLM-as-Judge/RAGAS/Braintrust）、Computer Use/Browser Use、Long-running Agent、Agent 安全对齐、Plan/Act 模式、AI 编程局限性认知；新增「学习路径建议」章节（推荐顺序、依赖关系、时间分配）；同步更新学习进度表、目录结构、工具速查 |
 
 ---
 
