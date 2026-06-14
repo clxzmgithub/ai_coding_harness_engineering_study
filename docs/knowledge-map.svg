@@ -41,7 +41,7 @@
   <rect x="40" y="24" width="6" height="100" rx="3" fill="url(#titleGrad)"/>
   <text x="850" y="66" text-anchor="middle" font-size="26" font-weight="700" fill="url(#titleGrad)" filter="url(#glow)">🤖 AI Coding &amp; Harness Engineering 知识体系全景大图</text>
   <text x="850" y="96" text-anchor="middle" font-size="14" fill="#a78bfa">ai_coding_harness_engineering_study · 8 大板块 · AI工程化 + Harness理论 + 大模型理论</text>
-  <text x="850" y="116" text-anchor="middle" font-size="12" fill="#7c3aed">v2.0.0 · 2026-06  |  定位: 🟣 AI 工程 —— 用 AI 提效</text>
+  <text x="850" y="116" text-anchor="middle" font-size="12" fill="#7c3aed">v2.1.0 · 2026-06  |  定位: 🟣 AI 工程 —— 用 AI 提效</text>
 
   <!-- ===== 三层架构定位 ===== -->
   <rect x="40" y="140" width="1620" height="52" rx="8" fill="#1a1040" stroke="#4c1d95" stroke-width="1" filter="url(#shadow)"/>
@@ -78,7 +78,7 @@
   <!-- ~~~~~~~~~~~~~~~~~~~~~ 行1: 板块 1 / 2 / 3 ~~~~~~~~~~~~~~~~~~~~~ -->
 
   <!-- 板块1: AI编程方法论 (🔴高) -->
-  <rect x="40" y="332" width="520" height="320" rx="10" fill="#1a0a2e" stroke="#7c3aed" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="40" y="332" width="520" height="440" rx="10" fill="#1a0a2e" stroke="#7c3aed" stroke-width="2" filter="url(#shadow)"/>
   <rect x="40" y="332" width="520" height="36" rx="10" fill="#7c3aed"/>
   <rect x="40" y="354" width="520" height="14" fill="#7c3aed"/>
   <circle cx="66" cy="350" r="8" fill="#ef4444"/>
@@ -101,7 +101,20 @@
   <text x="56" y="576" font-size="11" fill="#94a3b8">长会话退化/上下文污染/何时放弃AI手动接管</text>
   <text x="56" y="592" font-size="11" fill="#94a3b8">AI编程与人类协作开发工作流设计</text>
   <text x="56" y="612" font-size="11" fill="#475569">Code Review策略 · AI输出质量保障</text>
-  <text x="56" y="632" font-size="11" fill="#475569">参考: CLAUDE.md · .catpawrules · AGENTS.md实践</text>
+
+  <text x="56" y="634" font-size="11" font-weight="700" fill="#a78bfa">── AI 编程提效框架与工具生态 ──</text>
+  <text x="56" y="652" font-size="10" fill="#7c3aed">▸ SDD 规格驱动开发</text>
+  <text x="56" y="668" font-size="10" fill="#cbd5e1">OpenSpec(54k⭐): propose→spec→apply→archive 工作流</text>
+  <text x="56" y="682" font-size="10" fill="#cbd5e1">Kiro(Amazon): 内置 SDD 的 AI IDE，steering files+hooks</text>
+  <text x="56" y="698" font-size="10" fill="#94a3b8">spec-coding-mcp: SDD 工作流封装为 MCP Server</text>
+  <text x="56" y="714" font-size="10" fill="#7c3aed">▸ 虚拟 AI 工程团队（Multi-Role）</text>
+  <text x="56" y="728" font-size="10" fill="#cbd5e1">GStack(109k⭐): 23角色 /ceo /em /designer /qa /security...</text>
+  <text x="56" y="742" font-size="10" fill="#cbd5e1">claude-forge(747⭐): 11 Agent + 36 命令 + 15 Skill</text>
+  <text x="56" y="756" font-size="10" fill="#7c3aed">▸ AI 工具 Skill 能力扩展包</text>
+  <text x="56" y="770" font-size="10" fill="#cbd5e1">Superpowers(116k+⭐): 跨16款工具通用 Skill 合集</text>
+  <text x="56" y="784" font-size="10" fill="#cbd5e1">Graphify(66k⭐): 代码库→可查询知识图谱</text>
+  <text x="56" y="798" font-size="10" fill="#7c3aed">▸ AI 编程记忆与上下文持久化</text>
+  <text x="56" y="812" font-size="10" fill="#cbd5e1">claude-mem(82k⭐) · CCSwitch(100k⭐) · meridian · Memory Bank</text>
 
   <!-- 板块2: AI工具工程化 (🟠中高) -->
   <rect x="580" y="332" width="520" height="320" rx="10" fill="#0f1f0f" stroke="#166534" stroke-width="2" filter="url(#shadow)"/>
@@ -415,11 +428,11 @@
   <!-- 技术栈标签 -->
   <text x="60" y="1766" font-size="12" font-weight="700" fill="#a78bfa">🔖 核心技术标签</text>
   <text x="60" y="1784" font-size="11" fill="#64748b">Claude Code · Cursor · CatPaw · MCP · Codex CLI · Gemini CLI · Windsurf · RAGAS · Braintrust · LangSmith · PromptFoo</text>
-  <text x="60" y="1802" font-size="11" fill="#64748b">Transformer · RLHF · MoE · LLM-as-Judge · Eval Framework · Vibe Coding · Prompt Engineering · Hooks · CLAUDE.md</text>
+  <text x="60" y="1802" font-size="11" fill="#64748b">Transformer · RLHF · MoE · LLM-as-Judge · Eval Framework · Vibe Coding · Prompt Engineering · Hooks · CLAUDE.md · OpenSpec · GStack · Superpowers · Kiro · claude-mem</text>
 
   <!-- 版本 -->
   <text x="1300" y="1766" font-size="12" font-weight="700" fill="#a78bfa">📋 版本信息</text>
-  <text x="1300" y="1784" font-size="11" fill="#64748b">v2.0.0 · 2026-06 · 8 大板块 · AI工程提效定位</text>
+  <text x="1300" y="1784" font-size="11" fill="#64748b">v2.1.0 · 2026-06 · 8 大板块 · AI工程提效定位</text>
   <text x="1300" y="1802" font-size="11" fill="#64748b">分工: java_study(地基) + java_fullstack(系统+Agent编排) + 本项目(提效)</text>
 
   <!-- 底部装饰线 -->
