@@ -144,6 +144,60 @@
   - 规则内容设计：代码规范、架构约束、工作流指引
 - AI 与人类协作开发的工作流设计
 - AI 编程的质量保障与 Code Review 策略
+- **AI 编程提效框架与工具生态**（2025-2026 社区新兴方向）
+
+  > 💡 **定位说明**：这类框架不是 AI 工具本身（那属于板块四），而是**如何更好地使用 AI 工具的方法论框架**——通过结构化工作流、虚拟团队角色、记忆持久化等手段，系统性提升 AI 编程效率。
+
+  ### 🔵 规格驱动开发框架（SDD）
+  > 核心理念：先写规格，AI 才不会跑偏
+  - **[OpenSpec](https://github.com/Fission-AI/OpenSpec)**（54k ⭐）：最流行的 SDD 框架
+    - 工作流：`/opsx:propose` → `specs/` → `/opsx:apply` → `/opsx:archive`
+    - 自动生成 `proposal.md` / `design.md` / `tasks.md` 结构化文档
+    - 支持 Claude Code、Cursor、Gemini CLI 等主流工具
+  - **[Kiro](https://kiro.dev)**（Amazon 出品）：内置 SDD 的 AI IDE
+    - 原生 Spec-Driven 工作流（steering files + hooks）
+    - 功能需求 → 设计文档 → 任务清单 → 代码实现，全流程闭环
+  - **[spec-kit-zh](https://github.com/loulanyue/spec-kit-zh)**（257 ⭐）：SDD 中文入门工具包
+  - **[spec-coding-mcp](https://github.com/feiyun0112/spec-coding-mcp)**（49 ⭐）：SDD 工作流 MCP Server 封装
+
+  ### 🟠 虚拟 AI 工程团队套件（Multi-Role Agent）
+  > 核心理念：给 AI 分配不同角色视角，弥补单一视角盲点
+  - **[GStack](https://github.com/garrytan/gstack)**（109k ⭐）：YC CEO Garry Tan 的全套工具
+    - 23 个专家角色 Slash Command：`/ceo`（产品）、`/em`（架构）、`/designer`（UI审查）、`/reviewer`（Bug 挖掘）、`/qa`（真实浏览器测试）、`/security`（OWASP+STRIDE 审计）、`/release`（发 PR）等
+    - 实测数据：60 天交付 3 个生产服务、40+ 功能，LOC 速率号称 810x 提升
+  - **[claude-forge](https://github.com/sangrokjung/claude-forge)**（747 ⭐）：oh-my-zsh 风格插件框架
+    - 11 个 AI Agent + 36 个命令 + 15 个 Skill，模块化按需组合
+  - **[ostack](https://github.com/mr-daedalium/ostack-saas)**（102 ⭐）：针对 SaaS 场景的 gstack 变体
+  - **[nanostack](https://github.com/garagon/nanostack)**（201 ⭐）：轻量工作流 Harness（plan→review→test→ship）
+
+  ### 🟣 AI 工具能力增强 Skill 包
+  > 核心理念：给现有 AI 工具"装插件"，扩展能力边界
+  - **[Superpowers](https://github.com/anthropics/superpowers)**（116k+ ⭐）：最大的跨工具 Skill 合集
+    - 支持：Claude Code / Cursor / Windsurf / Kiro / Gemini CLI / Codex 等 16 款工具
+    - **[superpowers-zh](https://github.com/jnMetaCode/superpowers-zh)**（5.3k ⭐）：完整中文版 + 6 个国产原创 Skill
+  - **[Graphify](https://github.com/safishamsi/graphify)**（66k ⭐）：代码知识图谱 Skill
+    - 将项目代码 / SQL Schema / 文档转化为可查询知识图谱，解决 AI "看不见全貌"的问题
+  - **[open-agent-hub](https://github.com/guanyang/open-agent-hub)**（899 ⭐）：轻量 CLI Skill 管理器，零依赖
+  - **[beagle](https://github.com/existential-birds/beagle)**（64 ⭐）：145 个框架感知代码审查 Skill（Python/Go/React/iOS）
+
+  ### 🔴 AI 编程上下文与记忆持久化
+  > 核心理念：让 AI "记住"历史，跨会话保持项目认知连续性
+  - **[claude-mem](https://github.com/thedotmack/claude-mem)**（82k ⭐）：跨会话持久化记忆
+    - 捕获会话 → AI 压缩 → 下次自动注入，支持所有主流 Agent 工具
+  - **[CCSwitch](https://ccswitch.io)**（100k ⭐）：多工具一体化桌面客户端
+    - 统一管理 Claude Code / Codex / OpenClaw / Gemini CLI / Hermes Agent
+  - **[meridian](https://github.com/markmdev/meridian)**（177 ⭐）：零配置 Claude Code 增强
+    - 强制任务脚手架 + 结构化记忆 + compaction 后持久上下文
+  - **Memory Bank**：结构化 `.memory-bank/` 文件夹的社区最佳实践方法论
+
+  ### 📊 核心价值对比
+  | 框架/工具 | 类型 | 解决的核心问题 | 代表工具 |
+  |-----------|------|--------------|---------|
+  | SDD 规格驱动 | 工作流框架 | AI 直接写代码容易跑偏，先规格后实现 | OpenSpec、Kiro |
+  | 虚拟团队角色 | 角色套件 | 单一视角盲点多，多角色轮流审查 | GStack、claude-forge |
+  | Skill 能力包 | 能力扩展 | AI 工具默认能力有限，装插件增强 | Superpowers、CodeGraph |
+  | 记忆持久化 | 上下文工具 | AI 不记得历史，跨会话丢失认知 | claude-mem、CCSwitch |
+
 - **AI 编程的局限性认知**
   - 幻觉（Hallucination）：错误代码、虚假 API 引用
   - 错误传播：一步出错、后续雪崩
@@ -255,6 +309,21 @@
 - AI 辅助 Code Review 在 CI 中的集成
 - 自动化测试生成流水线
 - Eval 流水线的 CI 化：每次 Prompt 变更自动触发评估
+
+### 🛠️ Claude Code 实战 —— Harness 工程之道（实战子方向）
+> 以 Claude Code 为核心工具载体，将 Harness 理论落地为可工程化的实践方案
+
+- **AI Coding Harness 的四层体系**
+  - Layer 1：代码质量 Harness（单元测试 / 覆盖率 / CI 门禁）
+  - Layer 2：AI 行为一致性 Harness（规范遵从验证 / 架构漂移检测）
+  - Layer 3：LLM-as-Judge（AI 评估 AI 的输出质量）
+  - Layer 4：AI 工具效果 Harness（量化 Claude Code 的实际价值）
+- **Claude Code Hooks 构建质量门禁**：PostToolUse 自动触发编译/规范/架构约束检查
+- **AI 行为一致性测试**：批量验证 Claude Code 是否始终遵守 CLAUDE.md 中定义的规范
+- **架构漂移检测**：定期扫描 AI 引入的架构违规（层次越界 / 循环依赖 / 禁用依赖）
+- **代码生成 Eval 实战**：为真实项目构建 LLM-as-Judge 评分流水线
+- **CLAUDE.md Harness 配置模板**：将 Harness 要求系统化写入项目 AI 宪法
+- **月度 AI Coding 效果 Dashboard**：量化 AI 生成代码占比、Bug 密度、Review 通过率
 
 </details>
 
@@ -430,78 +499,93 @@
 ```
 ai_coding_harness_engineering_study/
 ├── README.md                          # 项目说明（本文件）
-├── docs/
-│   └── knowledge-map.svg              # 知识体系全景大图
 │
-├── 01-ai-coding/                      # 一、AI 编程方法论与实践
-│   ├── prompt-engineering/            #   Prompt 工程技巧
-│   ├── vibe-coding/                   #   Vibe Coding 理念与实践
-│   ├── rules-files/                   #   规则文件体系工程化（CLAUDE.md 等）
-│   ├── limitations/                   #   AI 编程局限性认知
-│   └── workflow/                      #   人机协作工作流设计
-│
-├── 02-ai-tool-engineering/            # 二、AI 工具工程化
-│   ├── rules-instructions/            #   Rules/Instructions 文件工程化
-│   ├── mcp/                           #   MCP 协议与实践
-│   ├── skill/                         #   Skill 体系设计
-│   ├── command/                       #   自定义命令（Slash Command）
-│   ├── hooks/                         #   Hooks 机制
-│   └── security/                      #   AI 安全（Prompt Injection 等）
-│
-├── 03-harness/                        # 三、Harness 工程理论
-│   ├── test-harness-basics/           #   测试线束基础
-│   ├── ai-code-validation/            #   AI 生成代码验证体系
-│   ├── eval-framework/                #   Eval 框架（LLM-as-Judge / RAGAS 等）
-│   └── benchmark/                     #   AI 能力评测 Benchmark
-│
-├── 04-tools/                          # 四、AI Coding 工具深度实践
-│   ├── claude-code/                   #   Claude Code（重点）
-│   │   ├── claude-md/                 #     CLAUDE.md 设计实践
-│   │   ├── hooks/                     #     Hooks 配置
-│   │   ├── mcp/                       #     MCP 集成
-│   │   └── commands/                  #     自定义命令
-│   ├── codex-cli/                     #   OpenAI Codex CLI
-│   ├── cursor/                        #   Cursor 深度使用
-│   │   ├── rules/                     #     Rules for AI 配置
-│   │   └── agent-mode/                #     Agent 模式实践
-│   ├── windsurf/                      #   Windsurf
-│   ├── copilot/                       #   GitHub Copilot
-│   ├── catpaw/                        #   CatPaw（美团）
-│   ├── gemini-cli/                    #   Gemini CLI
-│   └── others/                        #   Aider、Continue、OpenHands 等
-│
-├── 05-ai-theory/                      # 五、AI 算法与大模型理论（背景知识，了解层）
-│   ├── ml-basics/                     #   机器学习基础
-│   ├── deep-learning/                 #   深度学习（神经网络 / Attention）
-│   ├── transformer/                   #   Transformer 架构
-│   ├── llm-architecture/              #   大模型架构（Decoder-only / Scaling Law）
-│   ├── training-system/               #   大模型训练体系（Pre-train / SFT / RLHF / MoE）
-│   └── inference-optimization/        #   推理优化（量化 / KV Cache）
-│
-├── 06-ai-news/                        # 六、国内外 AI 动态追踪
-│
-├── 07-models/                         # 七、主流大模型学习笔记
-│   ├── openai/                        #   GPT / o 系列
-│   ├── anthropic/                     #   Claude 系列
-│   ├── google/                        #   Gemini 系列
-│   ├── deepseek/                      #   DeepSeek 系列
-│   ├── domestic/                      #   国内其他模型
-│   └── comparison/                    #   多模型横向对比
-│
-└── 08-claude-code-source/             # 八、Claude Code 源码学习（重点）
-    ├── overview/                      #   仓库结构与技术栈概览
-    ├── cli-entry/                     #   CLI 入口与命令解析
-    ├── conversation-engine/           #   对话引擎与消息循环
-    ├── tool-system/                   #   工具系统（内置工具注册与执行）
-    ├── mcp-client/                    #   MCP Client 实现
-    ├── hooks-system/                  #   Hooks 系统
-    ├── permission-system/             #   权限系统
-    ├── context-compression/           #   上下文压缩实现
-    ├── sub-agent/                     #   Sub-agent（Task 工具）
-    └── architecture-insights/         #   架构设计洞察与扩展开发
+└── docs/                              # 📚 学习笔记与文档根目录（所有学习内容统一在此）
+    ├── knowledge-map.svg              #   知识体系全景大图
+    │
+    ├── 01-ai-coding/                  #   一、AI 编程方法论与实践
+    │   ├── prompt-engineering/        #     Prompt 工程技巧
+    │   ├── vibe-coding/               #     Vibe Coding 理念与实践
+    │   ├── rules-files/               #     规则文件体系工程化（CLAUDE.md 等）
+    │   ├── limitations/               #     AI 编程局限性认知
+    │   ├── workflow/                  #     人机协作工作流设计
+    │   └── productivity-frameworks/   #     AI 编程提效框架与工具生态（2025-2026 新兴）
+    │       ├── sdd-spec-driven/       #       SDD 规格驱动开发（OpenSpec / Kiro）
+    │       │   └── openspec-best-practices.md
+    │       ├── multi-role-team/       #       虚拟 AI 工程团队（GStack / claude-forge）
+    │       │   └── gstack-setup-guide.md
+    │       ├── skill-packs/           #       AI 工具 Skill 能力扩展包（Superpowers / CodeGraph）
+    │       │   ├── superpowers-install-guide.md
+    │       │   └── codegraph-setup-guide.md      #       代码知识图谱 MCP Server（25%↓cost · 62%↓tool calls）
+    │       ├── memory-persistence/    #       AI 编程上下文与记忆持久化（claude-mem 等）
+    │       │   └── memory-bank-pattern.md
+    │       └── combined-practice/    #       组合最佳实践（多框架协同使用）
+    │           └── openspec-gstack-superpowers-workflow.md
+    │
+    ├── 02-ai-tool-engineering/        #   二、AI 工具工程化
+    │   ├── rules-instructions/        #     Rules/Instructions 文件工程化
+    │   ├── mcp/                       #     MCP 协议与实践
+    │   ├── skill/                     #     Skill 体系设计
+    │   ├── command/                   #     自定义命令（Slash Command）
+    │   ├── hooks/                     #     Hooks 机制
+    │   └── security/                  #     AI 安全（Prompt Injection 等）
+    │
+    ├── 03-harness/                    #   三、Harness 工程理论
+    │   ├── test-harness-basics/       #     测试线束基础
+    │   ├── ai-code-validation/        #     AI 生成代码验证体系
+    │   ├── eval-framework/            #     Eval 框架（LLM-as-Judge / RAGAS 等）
+    │   ├── benchmark/                 #     AI 能力评测 Benchmark
+    │   └── claude-code-harness-practice/  # Claude Code 实战 —— Harness 工程之道
+    │       └── claude-code-harness-engineering.md
+    │
+    ├── 04-tools/                      #   四、AI Coding 工具深度实践
+    │   ├── claude-code/               #     Claude Code（重点）
+    │   │   ├── claude-md/             #       CLAUDE.md 设计实践
+    │   │   ├── hooks/                 #       Hooks 配置
+    │   │   ├── mcp/                   #       MCP 集成
+    │   │   └── commands/              #       自定义命令
+    │   ├── codex-cli/                 #     OpenAI Codex CLI
+    │   ├── cursor/                    #     Cursor 深度使用
+    │   │   ├── rules/                 #       Rules for AI 配置
+    │   │   └── agent-mode/            #       Agent 模式实践
+    │   ├── windsurf/                  #     Windsurf
+    │   ├── copilot/                   #     GitHub Copilot
+    │   ├── catpaw/                    #     CatPaw（美团）
+    │   ├── gemini-cli/                #     Gemini CLI
+    │   └── others/                    #     Aider、Continue、OpenHands 等
+    │
+    ├── 05-ai-theory/                  #   五、AI 算法与大模型理论（背景知识，了解层）
+    │   ├── ml-basics/                 #     机器学习基础
+    │   ├── deep-learning/             #     深度学习（神经网络 / Attention）
+    │   ├── transformer/               #     Transformer 架构
+    │   ├── llm-architecture/          #     大模型架构（Decoder-only / Scaling Law）
+    │   ├── training-system/           #     大模型训练体系（Pre-train / SFT / RLHF / MoE）
+    │   └── inference-optimization/    #     推理优化（量化 / KV Cache）
+    │
+    ├── 06-ai-news/                    #   六、国内外 AI 动态追踪
+    │
+    ├── 07-models/                     #   七、主流大模型学习笔记
+    │   ├── openai/                    #     GPT / o 系列
+    │   ├── anthropic/                 #     Claude 系列
+    │   ├── google/                    #     Gemini 系列
+    │   ├── deepseek/                  #     DeepSeek 系列
+    │   ├── domestic/                  #     国内其他模型
+    │   └── comparison/                #     多模型横向对比
+    │
+    └── 08-claude-code-source/         #   八、Claude Code 源码学习（重点）
+        ├── overview/                  #     仓库结构与技术栈概览
+        ├── cli-entry/                 #     CLI 入口与命令解析
+        ├── conversation-engine/       #     对话引擎与消息循环
+        ├── tool-system/               #     工具系统（内置工具注册与执行）
+        ├── mcp-client/                #     MCP Client 实现
+        ├── hooks-system/              #     Hooks 系统
+        ├── permission-system/         #     权限系统
+        ├── context-compression/       #     上下文压缩实现
+        ├── sub-agent/                 #     Sub-agent（Task 工具）
+        └── architecture-insights/     #     架构设计洞察与扩展开发
 ```
 
-> 📝 目录结构会随学习进展持续迭代，当前为初步规划。
+> 📝 **目录规范**：`docs/` 是所有学习笔记与文档的一级根目录，新增内容统一放在对应的 `docs/0x-xxx/` 子目录下。目录结构会随学习进展持续迭代。
 
 ---
 
@@ -573,6 +657,10 @@ ai_coding_harness_engineering_study/
 | | 规则文件体系工程化（CLAUDE.md / .cursorrules / AGENTS.md）| 🔜 待开始 | - | 🔑 重点 |
 | | 人机协作工作流设计 | 🔜 待开始 | - | |
 | | AI 编程质量保障与 Code Review 策略 | 🔜 待开始 | - | |
+| | **AI 编程提效框架：SDD 规格驱动（OpenSpec / Kiro）** | 🔜 待开始 | - | 🔑 重点 |
+| | **AI 编程提效框架：虚拟工程团队（GStack / claude-forge）** | 🔜 待开始 | - | 🔑 重点 |
+| | **AI 编程提效框架：Skill 能力包（Superpowers / CodeGraph）** | 🔜 待开始 | - | 🔑 重点 |
+| | **AI 编程提效框架：记忆持久化（claude-mem / CCSwitch）** | 🔜 待开始 | - | |
 | | AI 编程局限性认知（幻觉 / 错误传播 / 退化）| 🔜 待开始 | - | |
 | **▶ 二、AI 工具工程化** | | | | |
 | | Rules / Instructions 文件工程化（各工具规则文件体系）| 🔜 待开始 | - | 🔑 重点 |
@@ -592,6 +680,10 @@ ai_coding_harness_engineering_study/
 | | RAG 评估框架 RAGAS（相关性 / 忠实度 / 质量）| 🔜 待开始 | - | |
 | | Eval 工具链（Braintrust / OpenAI Evals / DeepEval / PromptFoo）| 🔜 待开始 | - | |
 | | CI/CD 与 AI 结合（Eval 流水线 / Code Review 流水线）| 🔜 待开始 | - | |
+| | **Claude Code 实战：AI Coding Harness 四层体系** | 🔜 待开始 | - | 🔑 重点 |
+| | **Claude Code 实战：Hooks 质量门禁 + 架构约束检查** | 🔜 待开始 | - | 🔑 重点 |
+| | **Claude Code 实战：LLM-as-Judge 代码评测流水线** | 🔜 待开始 | - | |
+| | **Claude Code 实战：AI 编程效果量化 Dashboard** | 🔜 待开始 | - | |
 | **▶ 四、AI Coding 工具深度实践** | | | | |
 | | Claude Code — 基础工作流 & CLAUDE.md | 🔜 待开始 | - | 🔑 重点 |
 | | Claude Code — Hooks 配置实践 | 🔜 待开始 | - | 🔑 重点 |
@@ -672,6 +764,8 @@ ai_coding_harness_engineering_study/
 | 2026-06-10 | v0.9.0 | **项目定位重构**：承接来自 `java_fullstack_ai_agent_study` 迁移的「AI 算法理论」板块，作为背景知识沉淀；更新板块数量至 10 大板块 |
 | 2026-06-10 | v1.0.0 | 同步关联项目描述，与各项目 README 保持一致 |
 | 2026-06-13 | v2.0.0 | **重大重构：聚焦 AI 工程提效与工具研究**。将「上下文工程（Context Engineering）」和「Agent 模式与编排」迁移至 `java_fullstack_ai_agent_study`（板块22/23），在那里以工程落地视角深度实践；本项目重新聚焦为 8 大板块（AI Coding 方法论 / AI 工具工程化 / Harness / AI 工具实践 / 大模型理论了解 / AI 动态 / 主流大模型 / Claude Code 源码）；更新项目定位、分工边界表、学习路径、目录结构、学习进度表、关联项目说明 |
+| 2026-06-14 | v2.1.0 | **板块一扩充**：在「AI 编程方法论」中新增「AI 编程提效框架与工具生态」子方向，涵盖 2025-2026 年社区新兴的四大类框架——SDD 规格驱动开发（OpenSpec/Kiro）、虚拟 AI 工程团队套件（GStack/claude-forge）、AI 工具 Skill 能力扩展包（Superpowers/Graphify）、AI 编程上下文记忆持久化（claude-mem/CCSwitch）；同步更新学习进度表与 SVG 知识图谱 |
+| 2026-06-14 | v2.1.1 | **新增 CodeGraph**：将本地 clone 的 CodeGraph（代码知识图谱 MCP Server）纳入管理，新增 `docs/01-ai-coding/productivity-frameworks/skill-packs/codegraph-setup-guide.md`（含安装配置、10 个 MCP 工具详解、Benchmark 数据、源码学习要点）；更新 `superpowers-install-guide.md` Graphify 章节补充 CodeGraph 对比选型 |
 
 ---
 
